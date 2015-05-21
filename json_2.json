@@ -1,0 +1,989 @@
+{
+  "transformer": {
+    "type": "application",
+    "attributes": {
+      "id": "transformer_",
+      "version": "1.0",
+      "mode": "debug"
+    },
+    "properties": {
+      "items": {
+        "text": {
+          "type": "string",
+          "value": "Transformer"
+        }
+      }
+    },
+    "var": {
+      "projectInstances": {
+        "value": "+1-",
+        "type": "string"
+      },
+      "contentInstances": {
+        "value": "+",
+        "type": "string"
+      },
+      "tariff": {
+        "value": "promo",
+        "type": "string"
+      }
+    },
+    "types": {
+      "contentItem": {
+        "type": "document",
+        "properties": {
+          "items": {
+            "context": {
+              "type": "contextType"
+            },
+            "type": {
+              "type": "contentType",
+              "readonly": true
+            },
+            "index": {
+              "type": "integer"
+            },
+            "value": {
+              "type": "file",
+              "readonly": true
+            },
+            "hash": {
+              "type": "string",
+              "readonly": true
+            },
+            "caption": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            },
+            "metadata": {
+              "type": "boolean",
+              "readonly": true
+            },
+            "transform": {
+              "type": "string"
+            },
+            "thumb": {
+              "type": "file",
+              "readonly": true
+            }
+          }
+        }
+      }
+    },
+    "items": {
+      "templates": {
+        "type": "folder",
+        "attributes": {
+          "id": "templates_data",
+          "readonly": true
+        },
+        "permissions": {
+          "attributes": {
+            "readonly": true
+          },
+          "items": {
+            "guest": {
+              "read": true,
+              "write": false,
+              "execute": true
+            },
+            "administrator": {
+              "read": true,
+              "write": true,
+              "execute": true
+            }
+          }
+        },
+        "properties": {
+          "items": {
+            "text": {
+              "type": "string",
+              "value": "Vasiliy",
+              "readonly": true
+            },
+            "thumb": {
+              "type": "file",
+              "readonly": true
+            }
+          }
+        },
+        "items": {
+          "item": {
+            "type": "document",
+            "attributes": {
+              "readonly": true,
+              "instances": "+"
+            },
+            "properties": {
+              "items": {
+                "name": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "thumb": {
+                  "type": "file"
+                },
+                "preview": {
+                  "type": "file"
+                }
+              }
+            }
+          }
+        }
+      },
+      "additional": {
+        "type": "folder",
+        "attributes": {
+          "id": "additional_data",
+          "readonly": true
+        },
+        "properties": {
+          "items": {
+            "text": {
+              "type": "string",
+              "value": "Additional",
+              "readonly": true
+            },
+            "thumb": {
+              "type": "file",
+              "readonly": true
+            }
+          }
+        },
+        "events": {
+          "change": "additional_change"
+        },
+        "permissions": {
+          "attributes": {
+            "readonly": true
+          },
+          "items": {
+            "guest": {
+              "read": true,
+              "write": false,
+              "execute": true
+            },
+            "user": {
+              "read": true,
+              "write": false,
+              "execute": true
+            },
+            "administrator": {
+              "read": true,
+              "write": true,
+              "execute": true
+            }
+          }
+        },
+        "items": {
+          "item": {
+            "type": "folder",
+            "attributes": {
+              "instances": "+"
+            },
+            "properties": {
+              "items": {
+                "text": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "thumb": {
+                  "type": "file",
+                  "readonly": true
+                }
+              }
+            },
+            "items": {
+              "item": {
+                "type": "file",
+                "attributes": {
+                  "instances": "+"
+                },
+                "properties": {
+                  "items": {
+                    "text": {
+                      "type": "string"
+                    },
+                    "group": {
+                      "type": "string"
+                    },
+                    "metadata": {
+                      "type": "string",
+                      "readonly": true
+                    },
+                    "thumb": {
+                      "type": "file",
+                      "readonly": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "thumbnails": {
+        "type": "folder",
+        "attributes": {
+          "readonly": true,
+          "hidden": true
+        },
+        "permissions": {
+          "attributes": {
+            "readonly": true
+          },
+          "items": {
+            "guest": {
+              "read": false,
+              "write": false,
+              "execute": false
+            },
+            "user": {
+              "read": false,
+              "write": false,
+              "execute": false
+            },
+            "system": {
+              "read": true,
+              "write": true,
+              "execute": true
+            },
+            "administrator": {
+              "read": true,
+              "write": true,
+              "execute": true
+            }
+          }
+        },
+        "items": {
+          "item": {
+            "type": "file",
+            "attributes": {
+              "instances": "+",
+              "readonly": true
+            }
+          }
+        }
+      },
+      "projects": {
+        "type": "folder",
+        "permissions": {
+          "attributes": {
+            "readonly": true
+          },
+          "items": {
+            "guest": {
+              "read": false,
+              "write": false,
+              "execute": false
+            },
+            "user": {
+              "read": false,
+              "write": false,
+              "execute": false
+            },
+            "owner": {
+              "read": true,
+              "write": true,
+              "execute": true
+            },
+            "administrator": {
+              "read": true,
+              "write": true,
+              "execute": true
+            }
+          }
+        },
+        "properties": {
+          "items": {
+            "text": {
+              "type": "string",
+              "value": "Projects",
+              "readonly": true
+            },
+            "thumb": {
+              "type": "file",
+              "readonly": true
+            }
+          }
+        },
+        "events": {
+          "change": "projects_change"
+        },
+        "items": {
+          "item": {
+            "type": "document",
+            "attributes": {
+              "instances": "projectInstances"
+            },
+            "properties": {
+              "items": {
+                "text": {
+                  "type": "string",
+                  "value": "New project"
+                },
+                "date": {
+                  "type": "datetime",
+                  "readonly": true
+                },
+                "template": {
+                  "type": "string",
+                  "readonly": true
+                },
+                "hash": {
+                  "type": "string",
+                  "readonly": true
+                },
+                "thumb": {
+                  "type": "file",
+                  "readonly": true
+                },
+                "data": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "resolution": {
+                  "type": "contentResolution",
+                  "value": "hd",
+                  "defaultValue": "hd",
+                  "dependency": ""
+                },
+                "quality": {
+                  "type": "contentQuality",
+                  "value": "high",
+                  "defaultValue": "high",
+                  "dependency": "(tariff=='professional')||(role=='administrator')"
+                }
+              }
+            },
+            "couples": {
+              "in": {
+                "type": "folder",
+                "events": {
+                  "change": "in_change"
+                },
+                "items": {
+                  "item": {
+                    "type": "file",
+                    "attributes": {
+                      "instances": "+"
+                    }
+                  }
+                }
+              },
+              "out": {
+                "type": "folder",
+                "events": {
+                  "change": "out_change"
+                },
+                "items": {
+                  "item": {
+                    "type": "file",
+                    "attributes": {
+                      "instances": "+"
+                    },
+                    "properties": {
+                      "items": {
+                        "text": {
+                          "type": "string"
+                        },
+                        "metadata": {
+                          "type": "string",
+                          "readonly": true
+                        },
+                        "thumb": {
+                          "type": "file",
+                          "readonly": true
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "content": {
+                "type": "folder",
+                "events": {
+                  "change": "content_change"
+                },
+                "items": {
+                  "item": {
+                    "type": "contentItem",
+                    "attributes": {
+                      "instances": "contentInstances"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "director": {
+        "type": "folder",
+        "attributes": {
+          "readonly": true
+        },
+        "permissions": {
+          "attributes": {
+            "readonly": true
+          },
+          "items": {
+            "guest": {
+              "read": false,
+              "write": false,
+              "execute": false
+            },
+            "user": {
+              "read": false,
+              "write": false,
+              "execute": false
+            },
+            "owner": {
+              "read": true,
+              "write": false,
+              "execute": true
+            },
+            "administrator": {
+              "read": true,
+              "write": true,
+              "execute": true
+            }
+          }
+        },
+        "items": {
+          "data": {
+            "type": "folder",
+            "events": {
+              "change": "data_change"
+            },
+            "permissions": {
+              "attributes": {
+                "readonly": true
+              },
+              "items": {
+                "guest": {
+                  "read": false,
+                  "write": false,
+                  "execute": false
+                },
+                "user": {
+                  "read": false,
+                  "write": false,
+                  "execute": false
+                },
+                "owner": {
+                  "read": true,
+                  "write": true,
+                  "execute": true
+                },
+                "administrator": {
+                  "read": true,
+                  "write": true,
+                  "execute": true
+                }
+              }
+            },
+            "items": {
+              "item": {
+                "type": "document",
+                "attributes": {
+                  "instances": "+1-"
+                },
+                "properties": {
+                  "items": {
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "wave": {
+            "type": "folder",
+            "events": {
+              "change": "wave_change"
+            },
+            "permissions": {
+              "attributes": {
+                "readonly": true
+              },
+              "items": {
+                "guest": {
+                  "read": false,
+                  "write": false,
+                  "execute": false
+                },
+                "user": {
+                  "read": false,
+                  "write": false,
+                  "execute": false
+                },
+                "owner": {
+                  "read": true,
+                  "write": true,
+                  "execute": true
+                },
+                "administrator": {
+                  "read": true,
+                  "write": true,
+                  "execute": true
+                }
+              }
+            },
+            "items": {
+              "item": {
+                "type": "document",
+                "attributes": {
+                  "instances": "+1-"
+                },
+                "properties": {
+                  "items": {
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "response": {
+            "type": "folder",
+            "attributes": {
+              "readonly": true
+            },
+            "events": {
+              "change": "response_change"
+            },
+            "permissions": {
+              "attributes": {
+                "readonly": true
+              },
+              "items": {
+                "guest": {
+                  "read": false,
+                  "write": false,
+                  "execute": false
+                },
+                "user": {
+                  "read": false,
+                  "write": false,
+                  "execute": false
+                },
+                "owner": {
+                  "read": true,
+                  "write": false,
+                  "execute": true
+                },
+                "administrator": {
+                  "read": true,
+                  "write": true,
+                  "execute": true
+                }
+              }
+            },
+            "items": {
+              "item": {
+                "type": "link",
+                "attributes": {
+                  "instances": "+",
+                  "readonly": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "getit": {
+        "type": "folder",
+        "permissions": {
+          "attributes": {
+            "readonly": true
+          },
+          "items": {
+            "guest": {
+              "read": true,
+              "write": false,
+              "execute": false
+            },
+            "user": {
+              "read": true,
+              "write": false,
+              "execute": false
+            },
+            "owner": {
+              "read": true,
+              "write": true,
+              "execute": true
+            },
+            "administrator": {
+              "read": true,
+              "write": true,
+              "execute": true
+            }
+          }
+        },
+        "properties": {
+          "items": {
+            "text": {
+              "type": "string",
+              "value": "Get it",
+              "readonly": true
+            },
+            "thumb": {
+              "type": "file",
+              "readonly": true
+            }
+          }
+        },
+        "events": {
+          "change": "getit_change"
+        },
+        "items": {
+          "item": {
+            "type": "file",
+            "attributes": {
+              "instances": "+"
+            },
+            "properties": {
+              "items": {
+                "text": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "metadata": {
+                  "type": "string",
+                  "readonly": true
+                },
+                "resolution": {
+                  "type": "string",
+                  "readonly": true
+                },
+                "quality": {
+                  "type": "string",
+                  "readonly": true
+                },
+                "thumb": {
+                  "type": "file",
+                  "readonly": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "enumerations": {
+        "type": "folder",
+        "attributes": {
+          "readonly": true
+        },
+        "permissions": {
+          "attributes": {
+            "readonly": true
+          },
+          "items": {
+            "guest": {
+              "read": true,
+              "write": false,
+              "execute": true
+            },
+            "user": {
+              "read": true,
+              "write": false,
+              "execute": true
+            },
+            "administrator": {
+              "read": true,
+              "write": true,
+              "execute": true
+            }
+          }
+        },
+        "items": {
+          "contentResolution": {
+            "type": "folder",
+            "attributes": {
+              "readonly": true
+            },
+            "items": {
+              "sd": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "text": {
+                      "type": "string",
+                      "value": "SD"
+                    }
+                  }
+                }
+              },
+              "hd": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "text": {
+                      "type": "string",
+                      "value": "HD"
+                    }
+                  }
+                }
+              },
+              "fhd": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "text": {
+                      "type": "string",
+                      "value": "FHD"
+                    }
+                  }
+                }
+              },
+              "uhd": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "text": {
+                      "type": "string",
+                      "value": "UHD"
+                    }
+                  }
+                }
+              }
+            },
+            "dependency": "(tariff=='professional')||(role=='administrator')"
+          },
+          "contentQuality": {
+            "type": "folder",
+            "attributes": {
+              "readonly": true
+            },
+            "items": {
+              "low": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "text": {
+                      "type": "string",
+                      "value": "Low"
+                    }
+                  }
+                }
+              },
+              "high": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "text": {
+                      "type": "string",
+                      "value": "High"
+                    }
+                  }
+                }
+              }
+            },
+            "dependency": "(tariff=='professional')||(role=='administrator')"
+          },
+          "contextType": {
+            "type": "folder",
+            "attributes": {
+              "readonly": true
+            },
+            "items": {
+              "visual": {
+                "type": "document"
+              },
+              "audio": {
+                "type": "document"
+              },
+              "background": {
+                "type": "document",
+                "dependency": "(tariff=='professional')||(role=='administrator')"
+              },
+              "logo": {
+                "type": "document",
+                "dependency": "(tariff=='professional')||(role=='administrator')"
+              }
+            }
+          },
+          "contentType": {
+            "type": "folder",
+            "attributes": {
+              "readonly": true
+            },
+            "items": {
+              "text": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "text": {
+                      "type": "string",
+                      "value": "Text"
+                    }
+                  }
+                }
+              },
+              "image": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "text": {
+                      "type": "string",
+                      "value": "Image"
+                    }
+                  }
+                }
+              },
+              "track": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "text": {
+                      "type": "string",
+                      "value": "Track"
+                    }
+                  }
+                }
+              },
+              "fx": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "text": {
+                      "type": "string",
+                      "value": "FX"
+                    }
+                  }
+                },
+                "dependency": "(tariff=='professional')||(role=='administrator')"
+              },
+              "fx_": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "text": {
+                      "type": "string",
+                      "value": "Buy FX feature"
+                    }
+                  }
+                },
+                "dependency": "(tariff=='promo')||(role=='administrator')"
+              },
+              "video": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "text": {
+                      "type": "string",
+                      "value": "Video"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "uploadType": {
+            "type": "folder",
+            "attributes": {
+              "readonly": true
+            },
+            "items": {
+              "text": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "mimeTypes": {
+                      "type": "string",
+                      "value": "txt"
+                    },
+                    "maxSize": {
+                      "type": "integer",
+                      "value": 1
+                    }
+                  }
+                }
+              },
+              "image": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "mimeTypes": {
+                      "type": "string",
+                      "value": "jpg bmp png tiff gif"
+                    },
+                    "maxSize": {
+                      "type": "integer",
+                      "value": 8000
+                    }
+                  }
+                }
+              },
+              "track": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "mimeTypes": {
+                      "type": "string",
+                      "value": "mp3 wma wav aiff ogg"
+                    },
+                    "maxSize": {
+                      "type": "integer",
+                      "value": 8000
+                    }
+                  }
+                }
+              },
+              "fx": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "mimeTypes": {
+                      "type": "string",
+                      "value": "mp3 wma wav aiff ogg"
+                    },
+                    "maxSize": {
+                      "type": "integer",
+                      "value": 8000
+                    }
+                  }
+                },
+                "dependency": "(tariff=='professional')||(role=='administrator')"
+              },
+              "video": {
+                "type": "document",
+                "properties": {
+                  "items": {
+                    "mimeTypes": {
+                      "type": "string",
+                      "value": "mp4 mpeg mov mpg"
+                    },
+                    "maxSize": {
+                      "type": "integer",
+                      "value": 3000
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+section {
+    margin: 0 50px;
+}
+p {
+    font-family: 'Tahoma', 'sans-serif';
+    font-size: 17px;
+
+    margin: 0;
+    padding: 0;
+}
+.red {
+    color: #f00;
+}
+.yellow {
+    color: #ff0;
+}
+.green {
+    color: #0f0;
+}

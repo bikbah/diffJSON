@@ -1,0 +1,24 @@
+{
+    "transformer": {
+        "type": "application",
+        "attributes": {
+            "id": "transformer_",
+            "version": 1,
+            "debug": true,
+            "test": "test-val",
+            "testDiffVals": "val1"
+        },
+        "notFoundObjTest": {
+            "nf": "nf"
+        },
+        "properties": {
+            "items": {
+                "eq": "eq",
+                "text": {
+                    "type": "string",
+                    "value": "Transformer"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "transformer": {
+        "type": "application",
+        "attributes": {
+            "id": "transformer_",
+            "version": "2",
+            "testDiffVals": "val2",
+            "onlyHere": "onlyHere"
+        },
+        "properties": {
+            "items": {
+                "eq": "eq",
+                "text": {
+                    "type": "string",
+                    "value": "Transformer"
+                }
+            }
+        }
+    }
+}
